@@ -1,39 +1,27 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
-
 import './index.scss';
-
-export const formatter = new Intl.DateTimeFormat("ja", {
-	year: "numeric",
-	month: "long",
-	day: "numeric",
-	weekday: "short",
-	hour: "numeric",
-	minute: "numeric",
-	second: "numeric",
-});
-
-export const builtDate = new Date();
-export const builtDateStr = formatter.format(builtDate);
-
 ---
 <script>
-	import { formatter, builtDateStr } from "./index.astro";
+	import { formatter } from "./_index";
 
 	const instructions = document.querySelector(".instructions");
 	const loadedTime = new Date();
 
 	// 初回ロード時から更新されない
 	const loadedTimeStr = formatter.format(loadedTime);
+
+	const builtDate = (document.querySelector("meta[itemprop='built-date']") as HTMLMetaElement).content;
 	
 	instructions?.addEventListener("click", () => alert([
-		`ビルド時：　${builtDateStr}`,
+		`ビルド時：　${builtDate}`,
 		`ロード時：　${loadedTimeStr}`,
 		`クリック時：${formatter.format(new Date())}`,
 	].join("\n")));
 
 </script>
+
 <Layout title="Welcome to Astro.">
 	<main>
 		<svg
@@ -68,6 +56,7 @@ export const builtDateStr = formatter.format(builtDate);
 		<p class="instructions">
 			To get started, open the directory <code>src/pages</code> in your project.<br />
 			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
+			<br />
 		</p>
 		<ul role="list" class="link-card-grid">
 			<Card
