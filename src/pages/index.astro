@@ -4,7 +4,28 @@ import Card from '../components/Card.astro';
 
 import './index.scss';
 ---
+<script>
+	const instructions = document.querySelector(".instructions");
+	const loadedTime = new Date();
+	const formatter = new Intl.DateTimeFormat("ja", {
+		year: "numeric",
+		month: "long",
+		day: "numeric",
+		weekday: "short",
+		hour: "numeric",
+		minute: "numeric",
+		second: "numeric",
+	});
 
+	// 初回ロード時から更新されない
+	const loadedTimeStr = formatter.format(loadedTime);
+	
+	instructions?.addEventListener("click", () => alert([
+		`ロード時：　${loadedTimeStr}`,
+		`クリック時：${formatter.format(new Date())}`,
+	].join("\n")));
+
+</script>
 <Layout title="Welcome to Astro.">
 	<main>
 		<svg
@@ -64,3 +85,4 @@ import './index.scss';
 		</ul>
 	</main>
 </Layout>
+

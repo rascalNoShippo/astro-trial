@@ -5,7 +5,7 @@
     "paths": {
       "astro/*": ["./src/*"]
     },
-    "target": "ES2023",
+    "target": "ES2022",
     "strict": true,
   }
 }
