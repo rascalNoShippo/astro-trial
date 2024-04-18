@@ -6,4 +6,5 @@ export const formatter = new Intl.DateTimeFormat("ja", {
 	hour: "numeric",
 	minute: "numeric",
 	second: "numeric",
+  timeZone: "Asia/Tokyo",
 });
