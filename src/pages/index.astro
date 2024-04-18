@@ -14,10 +14,9 @@ export const formatter = new Intl.DateTimeFormat("ja", {
 	second: "numeric",
 });
 
-const builtDate = new Date();
+export const builtDate = new Date();
 export const builtDateStr = formatter.format(builtDate);
 
-const
 ---
 <script>
 	import { formatter, builtDateStr } from "./index.astro";
