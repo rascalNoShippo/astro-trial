@@ -1,0 +1,9 @@
+$accent: rgb(136, 58, 234);
+$accent-light: rgb(224, 204, 250);
+$accent-dark: rgb(49, 10, 101);
+$accent-gradient: linear-gradient(
+  45deg,
+  $accent,
+  $accent-light 30%,
+  white 60%
+);
