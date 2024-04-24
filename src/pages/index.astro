@@ -14,7 +14,8 @@ import { HeadText } from '../components/HeadText.tsx';
 	// 初回ロード時から更新されない
 	const loadedTimeStr = formatter.format(loadedTime);
 
-	const builtDate = (document.querySelector("meta[itemprop='built-date']") as HTMLMetaElement).content;
+	const builtDateStr = document.querySelector<HTMLMetaElement>("meta[itemprop='built-date']")?.content;
+	const builtDate = new Date(parseInt(builtDateStr!));
 	
 	instructions?.addEventListener("click", () => alert([
 		`ビルド時：　${builtDate}`,
