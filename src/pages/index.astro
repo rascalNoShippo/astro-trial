@@ -2,6 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import './index.scss';
+
+import { HeadText } from '../components/HeadText.tsx';
 ---
 <script>
 	import { formatter } from "./_index";
@@ -52,7 +54,7 @@ import './index.scss';
 				</linearGradient>
 			</defs>
 		</svg>
-		<h1>Welcome to <span class="text-gradient">Astro</span></h1>
+		<HeadText client:load />
 		<p class="instructions">
 			To get started, open the directory <code>src/pages</code> in your project.<br />
 			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.

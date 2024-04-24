@@ -3,9 +3,13 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "astro/*": ["./src/*"]
+      "astro/*": [
+        "./src/*"
+      ]
     },
     "target": "ES2022",
     "strict": true,
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
   }
 }
