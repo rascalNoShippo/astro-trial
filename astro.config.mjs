@@ -14,6 +14,7 @@ export default defineConfig({
     }
   },
   output: "server",
+  adapter: "server",
   integrations: [react()],
   server: {
     headers: {
