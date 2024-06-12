@@ -60,6 +60,8 @@ import { HeadText } from '../components/HeadText.tsx';
 			To get started, open the directory <code>src/pages</code> in your project.<br />
 			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
 			<br />
+			<p>{process.env.NODE_ENV + ""}</p>
+			<p>{process.env.APP_ENV + ""}</p>
 		</p>
 		<ul role="list" class="link-card-grid">
 			<Card
